@@ -4,21 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
- <!-- Core CSS - Include with every page -->
- <link href="css/bootstrap.min.css" rel="stylesheet">
- <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
- <!-- Page-Level Plugin CSS - Dashboard -->
- <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
- <link href="css/plugins/timeline/timeline.css" rel="stylesheet">
-
- <!-- SB Admin CSS - Include with every page -->
- <link href="css/sb-admin.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
-	
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
 	<div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -238,6 +227,6 @@
                 </li>
                 <!-- /.dropdown -->
             </ul>
-         </nav>
+            </nav>
 </body>
 </html>
