@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomeController {
 
-	@RequestMapping("welcome_dashboard.action")
+	@RequestMapping("main.action")
 	public String welcome() {
-		return "dashboard";
+		return "main";
 	}
 }
