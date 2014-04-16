@@ -7,13 +7,12 @@
 	<definition name="base.definition" template="/jsp/main.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/jsp/header.jsp" />
-		<put-attribute name="menu" value="/jsp/menu.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/jsp/footer.jsp" />
 	</definition>
 	
 	<definition name="main" extends="base.definition">
-		<put-attribute name="title" value="Dashboard" />
+		<put-attribute name="title" value="大家来记账" />
 		<put-attribute name="body" value="/jsp/dashboard.jsp" />
 	</definition>
 
