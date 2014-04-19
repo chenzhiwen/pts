@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<hr>
+
+<footer>
 <p>Copyright <code class="xml plain">&copy;</code> Zemo.com</p>
+</footer>
 </body>
 </html>

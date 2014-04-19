@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
 <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
 
 <script src="js/jquery.js"></script>
@@ -27,15 +27,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table style="width: 100%; height: 100%" align="center" border="1">
+	<table style="width: 100%; height: 100%" align="center" >
 		<tr>
-			<td height="6%" colspan="2"><tiles:insertAttribute name="header" /></td>
+			<td height="10"><tiles:insertAttribute name="header" /></td>
 		</tr>
 		<tr>
 			<td height="84%" width="100%"><tiles:insertAttribute name="body" /></td>
 		</tr>
 		<tr>
-			<td height="10%" colspan="2"><tiles:insertAttribute
+			<td height="10"><tiles:insertAttribute
 					name="footer" /></td>
 		</tr>
 	</table>

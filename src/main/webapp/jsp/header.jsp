@@ -4,7 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+$(function() {
+	
+	$('#navigatorUl li').click(function(e) { 
+		$('#navigatorUl li').each(function(index, obj) {
+			$(this).removeClass();
+		});
+    	$(this).addClass('active');
+   	});
 
+})
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -16,10 +27,10 @@
 					class="icon-bar"></span> <span class="icon-bar"></span>
 				</a> <a class="brand" href="#">记账</a>
 				<div class="nav-collapse">
-					<ul class="nav">
+					<ul id="navigatorUl" class="nav">
 						<li class="active"><a href="#">首页</a></li>
-						<li><a href="#about">关于</a></li>
-						<li><a href="#contact">联系</a></li>
+						<li><a href="#">关于</a></li>
+						<li><a href="#">联系</a></li>
 					</ul>
 					<form class="navbar-search pull-right">
 						<input type="text" class="search-query" placeholder="搜索">
