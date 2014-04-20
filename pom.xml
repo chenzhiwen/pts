@@ -235,7 +235,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>pt</finalName>
+		<finalName>pts</finalName>
 		<plugins>
 			<!-- 编译插件，默认使用jdk1.6 -->
 			<plugin>

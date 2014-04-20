@@ -7,7 +7,7 @@
 <title>首页</title>
 </head>
 
-<frameset rows="149,*" cols="*" frameborder="no" border="0" framespacing="0">
+<frameset rows="59,*" cols="*" frameborder="no" border="0" framespacing="0">
   <frame src="header.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame" />
   <frameset rows="*" cols="242,*" framespacing="0" frameborder="no" border="0">
     <frame src="menu.jsp" name="leftFrame" scrolling="no" noresize="noresize" id="leftFrame" title="leftFrame" />
@@ -15,5 +15,4 @@
   </frameset>
 </frameset>
 
-</body>
 </html>

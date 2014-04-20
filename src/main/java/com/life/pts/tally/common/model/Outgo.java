@@ -3,6 +3,8 @@ package com.life.pts.tally.common.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.ibatis.type.Alias;
+
 import com.life.pts.account.common.model.Account;
 
 /**
@@ -13,6 +15,7 @@ import com.life.pts.account.common.model.Account;
  * @date 2014年4月20日
  * @since 1.0.0-SNAPSHOT
  */
+@Alias("Outgo")
 public class Outgo implements Serializable {
 
 	private static final long serialVersionUID = -6641973525703567416L;
@@ -41,6 +44,26 @@ public class Outgo implements Serializable {
 	 * 是否晒单
 	 */
 	private boolean share;
+
+	/**
+	 * 消费日期
+	 */
+	private Date outgoDate;
+
+	/**
+	 * @return the outgoDate
+	 */
+	public Date getOutgoDate() {
+		return outgoDate;
+	}
+
+	/**
+	 * @param outgoDate
+	 *            the outgoDate to set
+	 */
+	public void setOutgoDate(Date outgoDate) {
+		this.outgoDate = outgoDate;
+	}
 
 	/**
 	 * 插入时间
@@ -186,8 +209,8 @@ public class Outgo implements Serializable {
 	public String toString() {
 		return "Outgo [id=" + id + ", money=" + money + ", account=" + account
 				+ ", tradeName=" + tradeName + ", share=" + share
-				+ ", insertTime=" + insertTime + ", updateTime=" + updateTime
-				+ ", remark=" + remark + "]";
+				+ ", outgoDate=" + outgoDate + ", insertTime=" + insertTime
+				+ ", updateTime=" + updateTime + ", remark=" + remark + "]";
 	}
 
 }

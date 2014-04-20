@@ -51,7 +51,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="typeAliasesPackage" value="com.life.pts" />
-<!-- 		<property name="mapperLocations" value="classpath:mybatis-mapping/*Mapper.xml" /> -->
+		<property name="mapperLocations" value="classpath:mybatis-mapping/*Mapper.xml" />
 <!-- 		<property name="plugins" ref="paginationInterceptor" /> -->
 	</bean>
 	<!-- mybatis接口 -->
