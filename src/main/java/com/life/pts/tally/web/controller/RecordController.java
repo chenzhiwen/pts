@@ -26,4 +26,9 @@ public class RecordController {
 	public String forwardAddRecord() {
 		return "addRecord";
 	}
+
+	@RequestMapping("record_add.action")
+	public String addRecord() {
+		return "addRecord";
+	}
 }
