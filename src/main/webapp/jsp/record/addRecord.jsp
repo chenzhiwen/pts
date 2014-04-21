@@ -13,7 +13,6 @@
 <link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
 <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
 <link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
-
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-transition.js"></script>
@@ -29,7 +28,26 @@
 <script src="<%=contextPath%>/js/bootstrap-carousel.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
-
+<script type="text/javascript">
+$(function() {
+	
+	$.ajax({
+		url : "<%=contextPath%>/account_list.action",
+		data : {a : 123},
+		success : function(data) {
+			var accountList = data['accountList'];
+			$.each(accountList, function(index, value) {
+				$('#accountId').append('<option value="' + value['id'] + '">' + value['name'] + '</option>');
+			});
+		},
+		failure : function() {
+			
+		},
+		type : 'post',
+		dataType : 'json'
+	});
+});
+</script>
 </head>
 <body>
 	<div class="container">
@@ -57,11 +75,8 @@
 											<div class="control-group">
 												<label class="control-label" for="select01">支出账户</label>
 												<div class="controls">
-													<select id="select01" name="account.id">
+													<select id="accountId" name="account.id">
 														<option>请选择</option>
-														<option>我的钱包</option>
-														<option>支付宝</option>
-														<option>财付通</option>
 													</select>
 												</div>
 											</div>

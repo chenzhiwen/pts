@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.life.framework.core.exception.WebException;
 import com.life.framework.core.mybatis.Criteria;
-import com.life.pts.account.common.model.Account;
+import com.life.pts.account.model.Account;
 import com.life.pts.account.service.AccountService;
 import com.life.pts.common.Constants;
 import com.life.pts.common.web.convert.DateConvertEditor;

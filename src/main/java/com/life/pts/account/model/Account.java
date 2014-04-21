@@ -1,4 +1,4 @@
-package com.life.pts.account.common.model;
+package com.life.pts.account.model;
 
 import java.io.Serializable;
 import java.util.Date;

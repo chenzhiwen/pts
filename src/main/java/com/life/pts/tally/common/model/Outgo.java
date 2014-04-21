@@ -5,7 +5,7 @@ import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
 
-import com.life.pts.account.common.model.Account;
+import com.life.pts.account.model.Account;
 
 /**
  * @Title: Outgo
