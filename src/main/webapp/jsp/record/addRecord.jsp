@@ -11,7 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
-<!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
+<link href="<%=contextPath%>/css/datepicker.css" rel="stylesheet">
 <link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
@@ -28,8 +28,25 @@
 <script src="<%=contextPath%>/js/bootstrap-carousel.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
+<script src="<%=contextPath%>/js/bootstrap-datepicker.js"></script>
+<script src="<%=contextPath%>/js/bootstrap-datepicker.zh-CN.js"></script>
 <script type="text/javascript">
 $(function() {
+	$('.datepicker').datepicker({
+		format: 'yyyy-mm-dd',
+		language : 'zh-CN',
+		todayBtn : "true",
+		autoclose : true
+	});
+
+	if("${success}") {
+		$(".alert").alert();
+		window.setInterval(function() {
+			$(".alert").alert('close');
+		}, 3000);
+	} else {
+		$(".alert").alert('close');
+	}
 	
 	$.ajax({
 		url : "<%=contextPath%>/account_list.action",
@@ -65,19 +82,35 @@ $(function() {
 									<div class="container">
 										<fieldset>
 											<legend>支出</legend>
+											<div class="alert alert-info">
+									            <a class="close" data-dismiss="alert" href="#">×</a>
+									            <strong>提示信息！</strong> 支出信息添加成功
+									          </div>
 											<div class="control-group">
-												<label class="control-label" for="input01">金额</label>
+								            <label class="control-label" for="appendedInput">支出金额</label>
+								            <div class="controls">
+								              <div class="input-append">
+								                <input name="money" required="true" class="span3" id="appendedInput" size="16" type="text"><span class="add-on">.00</span>
+								              </div>
+								            </div>
+								          </div>
+											<div class="control-group">
+												<label class="control-label">商家名称</label>
 												<div class="controls">
-													<input type="text" class="input-xlarge" id="input01" name="money">
-													<!-- <p class="help-block">除了文本域之外，任何HTML5输入框都是该样式</p> -->
+													<input type="text" class="input-xlarge span3" name="tradeName">
 												</div>
 											</div>
 											<div class="control-group">
-												<label class="control-label" for="select01">支出账户</label>
+												<label class="control-label">支出账户</label>
 												<div class="controls">
-													<select id="accountId" name="account.id">
-														<option>请选择</option>
+													<select class="span3" id="accountId" name="account.id" required="true">
 													</select>
+												</div>
+											</div>
+											<div class="control-group">
+												<label class="control-label">消费日期</label>
+												<div class="controls">
+													<input type="text" class="datepicker" name="outgoDate" required="true">
 												</div>
 											</div>
 											<div class="control-group">
@@ -98,11 +131,11 @@ $(function() {
 											<div class="control-group">
 												<label class="control-label" for="textarea">心得</label>
 												<div class="controls">
-													<textarea class="input-xlarge" id="textarea" rows="3" name="remark"></textarea>
+													<textarea class="input-xlarge span5" id="textarea" rows="3" name="remark"></textarea>
 												</div>
 											</div>
 											<div class="form-actions">
-												<button type="submit" class="btn btn-primary">提交</button>
+												<button type="submit" class="btn btn-primary" id="outgoSubmit">提交</button>
 												<button class="btn">取消</button>
 											</div>
 										</fieldset>

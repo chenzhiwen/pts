@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 	String contextPath = request.getContextPath();
@@ -28,18 +30,25 @@
 <title>账单</title>
 </head>
 <body>
+<legend>消费账单</legend>
 <table class="table table-striped table-bordered table-condensed" style="width: 90%;height: 100%;">
   <thead>
     <tr>
-      <th>金额</th>
+      <th>消费金额</th>
+      <th>商家名称</th>
+      <th>消费日期</th>
       <th>心得</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-    </tr>
+  	<c:forEach var="outgo" items="${outgoList}">
+	    <tr>
+	      <td>${outgo.money}</td>
+	      <td>${outgo.tradeName}</td>
+	      <td><fmt:formatDate value="${outgo.outgoDate}"/></td>
+	      <td>${outgo.remark}</td>
+	    </tr>
+  	</c:forEach>
   </tbody>
 </table>
 </body>

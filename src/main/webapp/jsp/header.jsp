@@ -51,7 +51,7 @@ $(function() {
 					<ul id="navigatorUl" class="nav">
 						<li class="active"><a href="<%=contextPath%>/jsp/main.jsp" target="mainFrame">首页</a></li>
 						<li><a href="<%=contextPath%>/jsp/record/addRecord.jsp" target="mainFrame">记账</a></li>
-						<li><a href="<%=contextPath%>/jsp/record/listRecord.jsp" target="mainFrame">联系</a></li>
+						<li><a href="<%=contextPath%>/outgo_list.action" target="mainFrame">统计</a></li>
 					</ul>
 					<form class="navbar-search pull-right">
 						<input type="text" class="search-query" placeholder="搜索">

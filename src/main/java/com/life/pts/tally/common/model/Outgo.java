@@ -51,21 +51,6 @@ public class Outgo implements Serializable {
 	private Date outgoDate;
 
 	/**
-	 * @return the outgoDate
-	 */
-	public Date getOutgoDate() {
-		return outgoDate;
-	}
-
-	/**
-	 * @param outgoDate
-	 *            the outgoDate to set
-	 */
-	public void setOutgoDate(Date outgoDate) {
-		this.outgoDate = outgoDate;
-	}
-
-	/**
 	 * 插入时间
 	 */
 	private Date insertTime;
@@ -198,6 +183,21 @@ public class Outgo implements Serializable {
 	 */
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	/**
+	 * @return the outgoDate
+	 */
+	public Date getOutgoDate() {
+		return outgoDate;
+	}
+
+	/**
+	 * @param outgoDate
+	 *            the outgoDate to set
+	 */
+	public void setOutgoDate(Date outgoDate) {
+		this.outgoDate = outgoDate;
 	}
 
 	/*

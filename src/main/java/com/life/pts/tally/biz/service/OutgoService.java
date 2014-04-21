@@ -3,6 +3,9 @@
  */
 package com.life.pts.tally.biz.service;
 
+import java.util.HashMap;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.life.framework.core.exception.ServiceException;
@@ -26,4 +29,12 @@ public interface OutgoService {
 	 * @throws ServiceException
 	 */
 	public void addOutgo(Outgo outgo) throws ServiceException;
+
+	/**
+	 * 根据指定条件获取消费信息
+	 * @param hashMap
+	 * @return TODO
+	 * @throws ServiceException 
+	 */
+	public List<Outgo> listOutgo(HashMap<String, Object> hashMap) throws ServiceException;
 }

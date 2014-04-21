@@ -31,4 +31,9 @@
 		<bean class="com.life.application.ccfp.user.web.interceptor.LoginInterceptor"/>
 	</mvc:interceptors> -->
 	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    
 </beans>
