@@ -135,7 +135,7 @@ $(function() {
 												</div>
 											</div>
 											<div class="form-actions">
-												<button type="submit" class="btn btn-primary" id="outgoSubmit">提交</button>
+												<button type="submit" class="btn btn-primary" id="outgoSubmit">记一笔</button>
 												<button class="btn">取消</button>
 											</div>
 										</fieldset>
