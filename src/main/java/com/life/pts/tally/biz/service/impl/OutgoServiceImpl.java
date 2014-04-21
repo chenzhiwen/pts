@@ -3,6 +3,10 @@
  */
 package com.life.pts.tally.biz.service.impl;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.life.framework.core.exception.ServiceException;
 import com.life.pts.tally.biz.mapper.OutgoMapper;
 import com.life.pts.tally.biz.service.OutgoService;
@@ -16,8 +20,10 @@ import com.life.pts.tally.common.model.Outgo;
  * @date 2014年4月20日
  * @since 1.0.0-SNAPSHOT
  */
+@Service
 public class OutgoServiceImpl implements OutgoService {
 	
+	@Resource
 	private OutgoMapper outgoMapper;
 
 	/* (non-Javadoc)

@@ -3,6 +3,8 @@
  */
 package com.life.pts.tally.web.controller;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,11 +22,12 @@ import com.life.pts.tally.common.model.Outgo;
 @Controller
 public class OutgoController {
 
+	@Resource
 	private OutgoService outgoService;
 	
 	@RequestMapping("outgo_add.action")
 	public String addOutgo(Outgo outgo) {
-		
+		System.out.println(outgo);
 		return "";
 	}
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.pts.account.mapper.AccountMapper">
+	
+	<cache />
+	
+	<resultMap type="Account" id="AccountResult">
+		 <id property="id" column="V_ID"/>
+		 <result property="insertTime" column="INSERT_TIME"/>
+		 <result property="updateTime" column="UPDATE_TIME"/>
+	</resultMap>
+	
+	<resultMap type="java.util.Map" id="BankAccountResultMap">
+		 <id property="id" column="V_ID"/>
+		 <result property="tailNumber" column="V_TAIL_NUMBER"/>
+		 <result property="accountName" column="T_ACCOUNT_NAME"/>
+		 <result property="money" column="F_MONEY"/>
+		 <result property="remarks" column="V_REMARKS"/>
+		 <result property="accountType.fieldId" column="field_id"/>
+		 <result property="accountType.displayValue" column="display_value"/>
+		 <result property="user.id" column="userId"/>
+		 <result property="user.username" column="userName"/>
+		 <result property="totalOutlay" column="total_outlay" javaType="float"/>
+	</resultMap>
+	
+	<sql id="bankAccountColumn">
+		ID, NAME, MONEY, INSERT_TIME, UPDATE_TIME, REMARK, USER_ID
+	</sql>
+	
+	<sql id="accountTable">
+		ACCOUNT
+	</sql>
+	
+	<select id="listAccount" useCache="false" parameterType="java.util.Map" resultMap="AccountResult">
+		SELECT <include refid="bankAccountColumn"/> FROM <include refid="accountTable"/>
+	</select>
+</mapper>

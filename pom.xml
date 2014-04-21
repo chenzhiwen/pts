@@ -37,7 +37,7 @@
 			<artifactId>standard</artifactId>
 			<version>1.1.2</version>
 		</dependency>
-		
+
 		<!-- testing -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -258,10 +258,11 @@
 				</configuration>
 			</plugin>
 			<!-- Jrebel插件实现热加载class文件 -->
-			<!-- <plugin> <groupId>org.zeroturnaround</groupId> <artifactId>javarebel-maven-plugin</artifactId> 
-				<version>1.1.5</version> <executions> <execution> <id>generate-rebel-xml</id> 
-				<phase>process-resources</phase> <goals> <goal>generate</goal> </goals> </execution> 
-				</executions> </plugin> -->
+			<plugin>
+				<groupId>org.zeroturnaround</groupId>
+				<artifactId>javarebel-maven-plugin</artifactId>
+				<version>1.1.5</version>
+			</plugin>
 
 			<!-- javadoc插件，用来生成API文档 -->
 			<plugin>

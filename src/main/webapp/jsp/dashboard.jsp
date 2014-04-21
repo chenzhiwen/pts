@@ -38,21 +38,21 @@
 					<div class="row">
 						<div class="tab-content">
 							<div class="tab-pane active" id="1">
-								<form class="form-horizontal">
+								<form class="form-horizontal" action="<%=contextPath%>/outgo_add.action" method="post">
 									<div class="container">
 										<fieldset>
 											<legend>支出</legend>
 											<div class="control-group">
 												<label class="control-label" for="input01">金额</label>
 												<div class="controls">
-													<input type="text" class="input-xlarge" id="input01">
+													<input type="text" class="input-xlarge" id="input01" name="money">
 													<!-- <p class="help-block">除了文本域之外，任何HTML5输入框都是该样式</p> -->
 												</div>
 											</div>
 											<div class="control-group">
 												<label class="control-label" for="select01">支出账户</label>
 												<div class="controls">
-													<select id="select01">
+													<select id="select01" name="account.id">
 														<option>请选择</option>
 														<option>我的钱包</option>
 														<option>支付宝</option>
@@ -70,7 +70,7 @@
 												<label class="control-label" for="optionsCheckbox">晒单</label>
 												<div class="controls">
 													<label class="checkbox"> <input type="checkbox"
-														id="optionsCheckbox" value="option1">
+														id="optionsCheckbox" value="1" name="share">
 														如果选中了好友可以查看你的消费记录
 													</label>
 												</div>
@@ -78,7 +78,7 @@
 											<div class="control-group">
 												<label class="control-label" for="textarea">心得</label>
 												<div class="controls">
-													<textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+													<textarea class="input-xlarge" id="textarea" rows="3" name="remark"></textarea>
 												</div>
 											</div>
 											<div class="form-actions">

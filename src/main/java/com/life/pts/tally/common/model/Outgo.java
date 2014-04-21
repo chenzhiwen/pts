@@ -43,7 +43,7 @@ public class Outgo implements Serializable {
 	/**
 	 * 是否晒单
 	 */
-	private boolean share;
+	private int share;
 
 	/**
 	 * 消费日期
@@ -143,7 +143,7 @@ public class Outgo implements Serializable {
 	/**
 	 * @return the share
 	 */
-	public boolean isShare() {
+	public int getShare() {
 		return share;
 	}
 
@@ -151,7 +151,7 @@ public class Outgo implements Serializable {
 	 * @param share
 	 *            the share to set
 	 */
-	public void setShare(boolean share) {
+	public void setShare(int share) {
 		this.share = share;
 	}
 
