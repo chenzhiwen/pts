@@ -25,12 +25,14 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.life.framework.core.exception.ServiceException;
 import com.life.pts.common.Constants;
 import com.life.pts.common.model.Attachment;
+import com.life.pts.common.service.AttachmentService;
 import com.life.pts.common.web.convert.DateConvertEditor;
 import com.life.pts.tally.biz.service.OutgoService;
 import com.life.pts.tally.common.model.Outgo;
@@ -45,15 +47,18 @@ import com.life.pts.tally.common.model.Outgo;
  */
 @Controller
 public class OutgoController {
+	
+	@Resource
+	private OutgoService outgoService;
+	
+	@Resource
+	private AttachmentService attachmentService;
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.registerCustomEditor(Date.class, new DateConvertEditor());
 		binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
 	}
-	
-	@Resource
-	private OutgoService outgoService;
 	
 	@RequestMapping("outgo_add.action")
 	public ModelAndView addOutgo(@RequestParam("attachment") MultipartFile[] attachment, HttpServletRequest request, Outgo outgo) {
@@ -99,11 +104,34 @@ public class OutgoController {
 		}
 		return new ModelAndView("/record/listRecord", model);
 	}
+
+	@RequestMapping("outgo_listJson.action")
+	@ResponseBody
+	public Map<String, Object> listJson() {
+		Map<String, Object> model = new HashMap<String, Object >();
+		try {
+			List<Outgo> outgoList = this.outgoService.listOutgo(new HashMap<String, Object>());
+			model.put("outgoList", outgoList);
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+		return model;
+	}
 	
 	@RequestMapping("/outgo_outputImage.action")
-	public void photo(HttpServletResponse response) throws IOException {
-	    response.setContentType("image/jpeg");
-	    InputStream in = new FileInputStream(new File("D:/pts/upload/psbadfdf.jpg"));
-	    IOUtils.copy(in, response.getOutputStream());
+	public void outputImage(String recordId, HttpServletResponse response) throws IOException {
+		try {
+			System.out.println(recordId);
+			List<Attachment> attachmentList = this.attachmentService.findByRecordId(recordId);
+			response.setContentType("image/jpeg");
+			
+			if (attachmentList != null && attachmentList.size() > 0) {
+				Attachment absolutePath = attachmentList.get(0);
+				InputStream in = new FileInputStream(new File(absolutePath.getAbsolutePath()));
+				IOUtils.copy(in, response.getOutputStream());
+			}
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
 	}
 }

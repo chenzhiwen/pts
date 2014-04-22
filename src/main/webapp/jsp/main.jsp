@@ -16,6 +16,9 @@
 <link href="<%=contextPath%>/css/datepicker.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/font-awesome.css" rel="stylesheet">
 <link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
+<link href="<%=contextPath%>/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="<%=contextPath%>/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-transition.js"></script>
@@ -31,12 +34,85 @@
 <script src="<%=contextPath%>/js/bootstrap-carousel.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
+<script src="<%=contextPath%>/js/jquery.flexslider.js"></script>
+<script src="<%=contextPath%>/js/hover.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(window).load(function() {
+			$('.flexslider').flexslider();
+		});
+		
+		$.ajax({
+			url : "<%=contextPath%>/outgo_listJson.action",
+			success : function(data) {
+				var outgoList = data['outgoList'];
+				$.each(outgoList, function(index, value) {
+					var outgoPanel = $('<div/>', {
+					    class : 'panel panel-default',
+					    style : 'width : 90%;'
+					});
+					outgoPanel.appendTo(document.body);
+					
+					var panelHeading = $('<div/>', {
+						class : 'panel-heading',
+						text : value['tradeName'] ? value['tradeName'] : ''
+					});
+					panelHeading.appendTo(outgoPanel);
+					
+					var bodyPanel = $('<div/>', {
+						class : 'panel-body',
+						text : value['remark'] ? value['remark'] : ''
+					});
+					bodyPanel.appendTo(outgoPanel);
+					
+					bodyPanel.append('<br>');
+					bodyPanel.append($('<img/>', {
+						src : '<%=contextPath%>/outgo_outputImage.action?recordId=' + value['id'],
+						width : 300,
+						height : 150
+					}));
+
+					bodyPanel.append('<br>');
+					bodyPanel.append('<br>');
+					bodyPanel.append('<input>', {
+						class : "span5",
+						style : "width: 97%",
+						type : "text",
+						placeholder : "我也说一句"
+					});
+				});
+			},
+			failure : function() {
+				
+			},
+			type : 'post',
+			dataType : 'json'
+		});
+	});
+</script>
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <div class="panel panel-default" style="width: 60%">
+
+      <!--SERVICES-->
+      <div class="home-rc clear">
+        <!--Gallery-->
+        <div class="gallery four-columns clear">
+          <div id="carousel" class="es-carousel-wrapper nav-none">
+<div class="es-carousel">
+              <ul>
+                <li><a href="../img/client/1-1.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-1.jpg" alt="" title="" /></a><a href="../img/client/1-2.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-2.jpg" alt="" title="" /></a></li>
+                <li><a href="../img/client/1-3.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-3.jpg" alt="" title="" /></a><a href="../img/client/1-4.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-4.jpg" alt="" title="" /></a></li>
+                <li><a href="../img/client/1-5.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-5.jpg" alt="" title="" /></a><a href="../img/client/1-6.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-6.jpg" alt="" title="" /></a></li>
+                <li><a href="../img/client/1-7.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-7.jpg" alt="" title="" /></a><a href="../img/client/1-8.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-8.jpg" alt="" title="" /></a></li>
+              </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+<%-- <div class="panel panel-default" style="width: 90%">
 	<div class="panel-body">
-		<div class="panel-group">
+		<div class="panel-group" id="zoneGroupDiv">
 		<c:forEach var="outgo" items="${outgoList}">
 			<div class="panel panel-default">
 			    <div class="panel-heading">
@@ -53,7 +129,7 @@
 	</div>
 </div> --%>
 
-<c:forEach var="outgo" items="${outgoList}">
+<%-- <c:forEach var="outgo" items="${outgoList}">
 	<div class="panel panel-default span6">
 	    <div class="panel-heading">
 	        ${outgo.tradeName}  
@@ -61,11 +137,12 @@
 	    </div>
 	    <div class="panel-body">
 	        ${outgo.remark}<br><br>
-	        <img alt="" src="<%=contextPath%>/outgo_outputImage.action" style="width: 300px; height: 100px">
+	        <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" >
 	        <input class="span5" style="width: 97%" type="text" placeholder="我也说一句">
 	    </div>
 	    <!-- /.panel-body -->
 	</div>
-</c:forEach>
+</c:forEach> --%>
+
 </body>
 </html>

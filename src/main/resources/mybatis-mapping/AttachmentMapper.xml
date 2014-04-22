@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.pts.common.mapper.AttachmentMapper">
+	
+		<cache />
+		
+		<sql id="attachmentTable">
+			ATTACHMENT
+		</sql>
+		
+		<sql id="attachmentColumn">
+			ID, ABSOLUTE_PATH, INSERT_TIME, RECORD_ID
+		</sql>
+		
+		<resultMap type="Attachment" id="AttachmentResult">
+			<id property="id" column="ID"/>
+			<result property="absolutePath" column="ABSOLUTE_PATH"/>
+			<result property="insertTime" column="INSERT_TIME"/>
+			<result property="recordId" column="RECORD_ID"/>
+		</resultMap>
+		
+		<insert id="addAttachment" parameterType="Attachment">
+			INSERT INTO <include refid="attachmentTable"/>(<include refid="attachmentColumn"/>)
+			VALUES(#{id}, #{absolutePath}, #{insertTime}, #{recordId})
+		</insert>
+		
+		<select id="findByRecordId" useCache="false" parameterType="string" resultMap="AttachmentResult">
+			SELECT <include refid="attachmentColumn"/> FROM <include refid="attachmentTable"/>
+			<where>
+				1 = 1
+				<if test="recordId != null and recordId != ''">
+					AND RECORD_ID = #{recordId}
+				</if>
+			</where>
+		</select>
+</mapper>

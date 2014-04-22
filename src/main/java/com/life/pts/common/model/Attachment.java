@@ -6,6 +6,8 @@ package com.life.pts.common.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.apache.ibatis.type.Alias;
+
 /**
  * @Title: Attachment
  * @Description: Attachment
@@ -14,6 +16,7 @@ import java.util.Date;
  * @date 2014-4-22
  * @since 1.0.0-SNAPSHOT
  */
+@Alias("Attachment")
 public class Attachment implements Serializable {
 
 	/**
@@ -35,6 +38,11 @@ public class Attachment implements Serializable {
 	 * 插入日期
 	 */
 	private Date insertTime;
+
+	/**
+	 * 对应的消费记录主键
+	 */
+	private String recordId;
 
 	/**
 	 * @return the id
@@ -81,6 +89,21 @@ public class Attachment implements Serializable {
 		this.insertTime = insertTime;
 	}
 
+	/**
+	 * @return the recordId
+	 */
+	public String getRecordId() {
+		return recordId;
+	}
+
+	/**
+	 * @param recordId
+	 *            the recordId to set
+	 */
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -88,7 +111,8 @@ public class Attachment implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "Attachment [id=" + id + ", absolutePath=" + absolutePath + ", insertTime=" + insertTime + "]";
+		return "Attachment [id=" + id + ", absolutePath=" + absolutePath
+				+ ", insertTime=" + insertTime + ", recordId=" + recordId + "]";
 	}
 
 }
