@@ -30,7 +30,7 @@
 <title>账单</title>
 </head>
 <body>
-<legend>消费账单</legend>
+<legend style="width: 90%">消费账单</legend>
 <table class="table table-striped table-bordered table-condensed" style="width: 90%;height: 100%;">
   <thead>
     <tr>
