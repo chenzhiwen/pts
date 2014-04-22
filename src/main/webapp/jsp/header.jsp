@@ -49,7 +49,7 @@ $(function() {
 				</a> <a class="brand" href="#">记账</a>
 				<div class="nav-collapse">
 					<ul id="navigatorUl" class="nav">
-						<li class="active"><a href="<%=contextPath%>/jsp/main.jsp" target="mainFrame">首页</a></li>
+						<li class="active"><a href="<%=contextPath%>/zone.action" target="mainFrame">动态</a></li>
 						<li><a href="<%=contextPath%>/jsp/record/addRecord.jsp" target="mainFrame">记账</a></li>
 						<li><a href="<%=contextPath%>/outgo_list.action" target="mainFrame">统计</a></li>
 					</ul>

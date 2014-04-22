@@ -2,10 +2,12 @@ package com.life.pts.tally.common.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.ibatis.type.Alias;
 
 import com.life.pts.account.model.Account;
+import com.life.pts.common.model.Attachment;
 
 /**
  * @Title: Outgo
@@ -64,6 +66,11 @@ public class Outgo implements Serializable {
 	 * 备注
 	 */
 	private String remark;
+
+	/**
+	 * 附件
+	 */
+	private List<Attachment> attachmentList;
 
 	/**
 	 * @return the id
@@ -200,6 +207,21 @@ public class Outgo implements Serializable {
 		this.outgoDate = outgoDate;
 	}
 
+	/**
+	 * @return the attachmentList
+	 */
+	public List<Attachment> getAttachmentList() {
+		return attachmentList;
+	}
+
+	/**
+	 * @param attachmentList
+	 *            the attachmentList to set
+	 */
+	public void setAttachmentList(List<Attachment> attachmentList) {
+		this.attachmentList = attachmentList;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -207,10 +229,9 @@ public class Outgo implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "Outgo [id=" + id + ", money=" + money + ", account=" + account
-				+ ", tradeName=" + tradeName + ", share=" + share
-				+ ", outgoDate=" + outgoDate + ", insertTime=" + insertTime
-				+ ", updateTime=" + updateTime + ", remark=" + remark + "]";
+		return "Outgo [id=" + id + ", money=" + money + ", account=" + account + ", tradeName=" + tradeName
+				+ ", share=" + share + ", outgoDate=" + outgoDate + ", insertTime=" + insertTime + ", updateTime="
+				+ updateTime + ", remark=" + remark + ", attachmentList=" + attachmentList + "]";
 	}
 
 }

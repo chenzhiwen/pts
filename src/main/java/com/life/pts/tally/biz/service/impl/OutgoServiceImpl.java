@@ -4,8 +4,8 @@
 package com.life.pts.tally.biz.service.impl;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -48,7 +48,7 @@ public class OutgoServiceImpl implements OutgoService {
 	}
 
 	@Override
-	public List<Outgo> listOutgo(HashMap<String, Object> hashMap) throws ServiceException {
+	public List<Outgo> listOutgo(Map<String, Object> hashMap) throws ServiceException {
 		try {
 			return this.outgoMapper.listOutgo(hashMap);
 		} catch (Exception e) {

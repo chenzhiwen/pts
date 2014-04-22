@@ -78,7 +78,7 @@ $(function() {
 					<div class="row">
 						<div class="tab-content">
 							<div class="tab-pane active" id="1">
-								<form class="form-horizontal" action="<%=contextPath%>/outgo_add.action" method="post">
+								<form class="form-horizontal" action="<%=contextPath%>/outgo_add.action" method="post" enctype="multipart/form-data">
 									<div class="container">
 										<fieldset>
 											<legend>支出</legend>
@@ -116,7 +116,7 @@ $(function() {
 											<div class="control-group">
 												<label class="control-label" for="fileInput">晒照片</label>
 												<div class="controls">
-													<input class="input-file" id="fileInput" type="file">
+													<input class="input-file" id="fileInput" type="file" name="attachment">
 												</div>
 											</div>
 											<div class="control-group">
