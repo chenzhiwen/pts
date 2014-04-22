@@ -3,8 +3,8 @@
  */
 package com.life.pts.tally.biz.mapper;
 
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.life.framework.core.exception.DAOException;
 import com.life.framework.core.mybatis.mapper.RepositoryMapper;
@@ -23,5 +23,5 @@ public interface OutgoMapper {
 
 	void addOutgo(Outgo outgo) throws DAOException;
 
-	List<Outgo> listOutgo(HashMap<String, Object> hashMap) throws DAOException;
+	List<Outgo> listOutgo(Map<String, Object> hashMap) throws DAOException;
 }

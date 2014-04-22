@@ -3,8 +3,8 @@
  */
 package com.life.pts.tally.biz.service;
 
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -36,5 +36,5 @@ public interface OutgoService {
 	 * @return TODO
 	 * @throws ServiceException 
 	 */
-	public List<Outgo> listOutgo(HashMap<String, Object> hashMap) throws ServiceException;
+	public List<Outgo> listOutgo(Map<String, Object> hashMap) throws ServiceException;
 }

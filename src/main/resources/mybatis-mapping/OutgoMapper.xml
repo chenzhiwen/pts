@@ -9,6 +9,7 @@
 		<result property="account.id" column="ACCOUNT_ID"/>
 		<result property="tradeName" column="TRADE_NAME"/>
 		<result property="outgoDate" column="OUTGO_DATE"/>
+		<result property="insertTime" column="INSERT_TIME"/>
 	</resultMap>
 
 	<sql id="outgoTable">
@@ -32,5 +33,11 @@
 	
 	<select id="listOutgo" useCache="false" parameterType="java.util.Map" resultMap="OutgoResult">
 		SELECT <include refid="outgoColumns"/> FROM <include refid="outgoTable"/>
+		<where>
+			<if test="share != null and share != ''">
+				AND SHARE = #{share}
+			</if>
+		</where>
+		ORDER BY INSERT_TIME DESC
 	</select>
 </mapper>
