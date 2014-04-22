@@ -54,14 +54,15 @@
 </div> --%>
 
 <c:forEach var="outgo" items="${outgoList}">
-	<div class="panel panel-default span7">
+	<div class="panel panel-default span6">
 	    <div class="panel-heading">
 	        ${outgo.tradeName}  
 	        <fmt:formatDate value="${outgo.insertTime}" type="time"/>
 	    </div>
 	    <div class="panel-body">
 	        ${outgo.remark}<br><br>
-	        <input class="span6" type="text" placeholder="我也说一句">
+	        <img alt="" src="<%=contextPath%>/outgo_outputImage.action" style="width: 300px; height: 100px">
+	        <input class="span5" style="width: 97%" type="text" placeholder="我也说一句">
 	    </div>
 	    <!-- /.panel-body -->
 	</div>

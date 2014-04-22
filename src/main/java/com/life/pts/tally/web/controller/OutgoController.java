@@ -4,7 +4,9 @@
 package com.life.pts.tally.web.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -13,8 +15,10 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
@@ -94,5 +98,12 @@ public class OutgoController {
 			e.printStackTrace();
 		}
 		return new ModelAndView("/record/listRecord", model);
+	}
+	
+	@RequestMapping("/outgo_outputImage.action")
+	public void photo(HttpServletResponse response) throws IOException {
+	    response.setContentType("image/jpeg");
+	    InputStream in = new FileInputStream(new File("D:/pts/upload/psbadfdf.jpg"));
+	    IOUtils.copy(in, response.getOutputStream());
 	}
 }
