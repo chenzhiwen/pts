@@ -82,7 +82,7 @@ $(function() {
 									<div class="container">
 										<fieldset>
 											<legend>支出</legend>
-											<div class="alert alert-info">
+											<div class="alert alert-success">
 									            <a class="close" data-dismiss="alert" href="#">×</a>
 									            <strong>提示信息！</strong> 支出信息添加成功
 									          </div>
@@ -117,6 +117,7 @@ $(function() {
 												<label class="control-label" for="fileInput">晒照片</label>
 												<div class="controls">
 													<input class="input-file" id="fileInput" type="file" name="attachment">
+													<p class="help-block">注意：上传的图片不能超过3M</p>
 												</div>
 											</div>
 											<div class="control-group">

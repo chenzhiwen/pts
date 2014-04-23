@@ -77,7 +77,7 @@ public class OutgoController {
 			        }
 			        //这里不必处理IO流关闭的问题，因为FileUtils.copyInputStreamToFile()方法内部会自动把用到的IO流关掉，我是看它的源码才知道的  
 			        FileUtils.copyInputStreamToFile(file.getInputStream(), new File(realPath, file.getOriginalFilename()));
-			        attachmentImage.setAbsolutePath(realPath + file.getOriginalFilename());
+			        attachmentImage.setAbsolutePath(file.getOriginalFilename());
 			        
 			        attachmentList.add(attachmentImage);
 			    }
@@ -121,10 +121,15 @@ public class OutgoController {
 	@RequestMapping("/outgo_outputImage.action")
 	public void outputImage(String absolutePath, HttpServletResponse response) {
 		try {
+			String fileSharePath = Constants.CONFIG_PROPERTIES.getProperty(Constants.FILE_UPLOAD_PATH);
+			
 			response.setContentType("image/jpeg");
 			
-			InputStream in = new FileInputStream(new File(absolutePath));
-			IOUtils.copy(in, response.getOutputStream());
+			File imageFile = new File(fileSharePath + absolutePath);
+			if (imageFile.exists()) {
+				InputStream in = new FileInputStream(imageFile);
+				IOUtils.copy(in, response.getOutputStream());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
