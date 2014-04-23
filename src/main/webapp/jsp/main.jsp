@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 	String contextPath = request.getContextPath();
@@ -15,10 +15,12 @@
 <link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/datepicker.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/font-awesome.css" rel="stylesheet">
-<link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
-<link href="<%=contextPath%>/css/flexslider.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="<%=contextPath%>/css/style.css" rel="stylesheet" type="text/css" media="screen" />
-
+<link href="<%=contextPath%>/js/google-code-prettify/prettify.css"
+	rel="stylesheet">
+<link href="<%=contextPath%>/css/flexslider.css" rel="stylesheet"
+	type="text/css" media="screen" />
+<link href="<%=contextPath%>/css/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" media="screen" />
+	
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-transition.js"></script>
@@ -35,14 +37,16 @@
 <script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
 <script src="<%=contextPath%>/js/jquery.flexslider.js"></script>
-<script src="<%=contextPath%>/js/hover.js"></script>
+<script src="<%=contextPath%>/js/jquery.fancybox.js?v=2.1.5"></script>
 <script type="text/javascript">
 	$(function() {
 		$(window).load(function() {
 			$('.flexslider').flexslider();
 		});
 		
-		$.ajax({
+		$('.fancybox').fancybox();
+		
+		<%-- $.ajax({
 			url : "<%=contextPath%>/outgo_listJson.action",
 			success : function(data) {
 				var outgoList = data['outgoList'];
@@ -87,30 +91,13 @@
 			},
 			type : 'post',
 			dataType : 'json'
-		});
+		}); --%>
 	});
 </script>
 <title>Insert title here</title>
 </head>
 <body>
-
-      <!--SERVICES-->
-      <div class="home-rc clear">
-        <!--Gallery-->
-        <div class="gallery four-columns clear">
-          <div id="carousel" class="es-carousel-wrapper nav-none">
-<div class="es-carousel">
-              <ul>
-                <li><a href="../img/client/1-1.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-1.jpg" alt="" title="" /></a><a href="../img/client/1-2.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-2.jpg" alt="" title="" /></a></li>
-                <li><a href="../img/client/1-3.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-3.jpg" alt="" title="" /></a><a href="../img/client/1-4.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-4.jpg" alt="" title="" /></a></li>
-                <li><a href="../img/client/1-5.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-5.jpg" alt="" title="" /></a><a href="../img/client/1-6.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-6.jpg" alt="" title="" /></a></li>
-                <li><a href="../img/client/1-7.jpg" rel="gallery"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-7.jpg" alt="" title="" /></a><a href="../img/client/1-8.jpg" rel="gallery" class="m-bot3"><span class="rollover-zoom">&nbsp;</span><img src="../img/client/1-8.jpg" alt="" title="" /></a></li>
-              </ul>
-            </div>
-            </div>
-            </div>
-            </div>
-<%-- <div class="panel panel-default" style="width: 90%">
+	<%-- <div class="panel panel-default" style="width: 90%">
 	<div class="panel-body">
 		<div class="panel-group" id="zoneGroupDiv">
 		<c:forEach var="outgo" items="${outgoList}">
@@ -129,20 +116,29 @@
 	</div>
 </div> --%>
 
-<%-- <c:forEach var="outgo" items="${outgoList}">
+<c:forEach var="outgo" items="${outgoList}">
 	<div class="panel panel-default span6">
 	    <div class="panel-heading">
 	        ${outgo.tradeName}  
 	        <fmt:formatDate value="${outgo.insertTime}" type="time"/>
 	    </div>
 	    <div class="panel-body">
-	        ${outgo.remark}<br><br>
-	        <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" >
+       		<div class="panel-body">
+				<p>
+			        <c:forEach var="attachment" items="${outgo.attachmentList}">
+			        	<c:if test="${!empty attachment.absolutePath}">
+							<a class="fancybox" href="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}" data-fancybox-group="gallery"><img width="180" height="180" src="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}" alt="" /></a>							
+			        	</c:if>
+			        </c:forEach>
+				</p>
+		        <br>${outgo.remark}
+		    </div>
+	        <%-- <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" > --%>
 	        <input class="span5" style="width: 97%" type="text" placeholder="我也说一句">
 	    </div>
 	    <!-- /.panel-body -->
 	</div>
-</c:forEach> --%>
+</c:forEach>
 
 </body>
 </html>

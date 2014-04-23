@@ -119,18 +119,13 @@ public class OutgoController {
 	}
 	
 	@RequestMapping("/outgo_outputImage.action")
-	public void outputImage(String recordId, HttpServletResponse response) throws IOException {
+	public void outputImage(String absolutePath, HttpServletResponse response) {
 		try {
-			System.out.println(recordId);
-			List<Attachment> attachmentList = this.attachmentService.findByRecordId(recordId);
 			response.setContentType("image/jpeg");
 			
-			if (attachmentList != null && attachmentList.size() > 0) {
-				Attachment absolutePath = attachmentList.get(0);
-				InputStream in = new FileInputStream(new File(absolutePath.getAbsolutePath()));
-				IOUtils.copy(in, response.getOutputStream());
-			}
-		} catch (ServiceException e) {
+			InputStream in = new FileInputStream(new File(absolutePath));
+			IOUtils.copy(in, response.getOutputStream());
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
