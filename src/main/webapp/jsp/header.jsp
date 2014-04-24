@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
-<!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
+<link href="<%=contextPath%>/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
 
 <script src="<%=contextPath%>/js/jquery.js"></script>
