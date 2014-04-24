@@ -20,7 +20,7 @@
 	rel="stylesheet">
 <link href="<%=contextPath%>/css/flexslider.css" rel="stylesheet"
 	type="text/css" media="screen" />
-<link href="<%=contextPath%>/css/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" media="screen" />
+<link href="<%=contextPath%>/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="screen" />
 	
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
@@ -38,7 +38,7 @@
 <script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
 <script src="<%=contextPath%>/js/jquery.flexslider.js"></script>
-<script src="<%=contextPath%>/js/jquery.fancybox.js?v=2.1.5"></script>
+<script src="<%=contextPath%>/js/jquery.fancybox.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$(window).load(function() {
@@ -132,7 +132,7 @@
 			        	</c:if>
 			        </c:forEach>
 				</p>
-		        <br>${outgo.remark}
+		        ${outgo.remark}
 		    </div>
 	        <%-- <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" > --%>
 	        <input class="span5" style="width: 97%" type="text" placeholder="我也说一句">
