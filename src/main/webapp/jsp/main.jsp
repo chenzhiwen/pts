@@ -124,13 +124,13 @@
 	    </div>
 	    <div class="panel-body">
        		<div class="panel-body">
-				<p>
 			        <c:forEach var="attachment" items="${outgo.attachmentList}">
+						<p>
 			        	<c:if test="${!empty attachment.absolutePath}">
 							<a class="fancybox" href="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}" data-fancybox-group="gallery"><img width="180" height="180" src="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}" alt="" /></a>							
 			        	</c:if>
+						</p>
 			        </c:forEach>
-				</p>
 		        <br>${outgo.remark}
 		    </div>
 	        <%-- <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" > --%>
