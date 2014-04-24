@@ -49,12 +49,17 @@
 		<!-- framework -->
 		<dependency>
 			<groupId>com.life.framework</groupId>
-			<artifactId>life-framework-util</artifactId>
+			<artifactId>framework-util</artifactId>
 			<version>${life.framework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.life.framework</groupId>
-			<artifactId>life-framework-core</artifactId>
+			<artifactId>framework-core</artifactId>
+			<version>${life.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.life.framework</groupId>
+			<artifactId>framework-auth</artifactId>
 			<version>${life.framework.version}</version>
 		</dependency>
 
