@@ -43,10 +43,10 @@
   <tbody>
   	<c:forEach var="outgo" items="${outgoList}">
 	    <tr>
-	      <td>${outgo.money}</td>
-	      <td>${outgo.tradeName}</td>
-	      <td><fmt:formatDate value="${outgo.outgoDate}"/></td>
-	      <td>${outgo.remark}</td>
+	      <td class="span2">${outgo.money}</td>
+	      <td class="span2">${outgo.tradeName}</td>
+	      <td class="span2"><fmt:formatDate value="${outgo.outgoDate}"/></td>
+	      <td class="span6">${outgo.remark}</td>
 	    </tr>
   	</c:forEach>
   </tbody>
