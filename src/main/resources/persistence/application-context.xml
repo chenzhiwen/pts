@@ -12,7 +12,7 @@
 	<aop:aspectj-autoproxy />
 
 	<!-- spring扫描机制 -->
-	<context:component-scan base-package="com.life.pts,com.life.framework.authority" />
+	<context:component-scan base-package="com.life.pts,com.life.framework.um.biz" />
 	
 	<!-- 加载properties文件 -->
 	<context:property-placeholder location="classpath:persistence/jdbc.properties" />
@@ -50,13 +50,14 @@
 	<!-- MyBatis session 工厂 配置 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="typeAliasesPackage" value="com.life.pts" />
-		<property name="mapperLocations" value="classpath:mybatis-mapping/*Mapper.xml" />
+		<property name="typeAliasesPackage" value="com.life.pts,com.life.framework.um.biz.entity" />
+		<property name="mapperLocations" value="classpath:mybatis-mapping/*Mapper.xml,
+		classpath:com/life/framework/um/biz/mapper/*.Mapper.xml" />
 <!-- 		<property name="plugins" ref="paginationInterceptor" /> -->
 	</bean>
 	<!-- mybatis接口 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.life.pts,com.life.framework.authority" />
+		<property name="basePackage" value="com.life.pts,com.life.framework.um.biz" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<property name="annotationClass"
 			value="com.life.framework.core.mybatis.mapper.RepositoryMapper" />

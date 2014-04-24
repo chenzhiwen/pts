@@ -63,6 +63,12 @@
 			<version>${life.framework.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.life.framework</groupId>
+			<artifactId>framework-um-web</artifactId>
+			<version>${life.framework.version}</version>
+		</dependency>
+
 		<!-- spring aop依赖的两个jar: aspectjrt & aspectjweaver -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
