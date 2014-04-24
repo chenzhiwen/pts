@@ -48,6 +48,12 @@ $(function() {
 		$(".alert").alert('close');
 	}
 	
+	
+
+	$('#addFileBtn').click(function() {
+		$('#attachementGroupDiv').append('<div class="controls"><input class="input-file" id="fileInput" type="file" name="attachment"></div>');
+	});
+	
 	$.ajax({
 		url : "<%=contextPath%>/account_list.action",
 		data : {a : 123},
@@ -117,9 +123,11 @@ $(function() {
 												<label class="control-label" for="fileInput">晒照片</label>
 												<div class="controls">
 													<input class="input-file" id="fileInput" type="file" name="attachment">
+													<button type="button" class="btn" id="addFileBtn">添加</button>
 													<p class="help-block">注意：上传的图片不能超过3M</p>
 												</div>
 											</div>
+											<div id="attachementGroupDiv"></div>
 											<div class="control-group">
 												<label class="control-label" for="optionsCheckbox">晒单</label>
 												<div class="controls">

@@ -12,7 +12,8 @@
 		<result property="outgoDate" column="OUTGO_DATE"/>
 		<result property="insertTime" column="INSERT_TIME"/>
 		<result property="remark" column="REMARK"/>
-		<collection property="attachmentList" column="ATT_RECORD_ID" javaType="ArrayList" resultMap="AttachmentResult"/>
+		<collection property="attachmentList" ofType="Attachment" 
+		resultMap="AttachmentResult" columnPrefix="ATT_" />
 	</resultMap>
 	
 	<resultMap type="Attachment" id="AttachmentResult">
@@ -44,9 +45,9 @@
 	<select id="listOutgo" useCache="false" parameterType="java.util.Map" resultMap="OutgoResult">
 		SELECT 
 			o.ID, o.MONEY, o.ACCOUNT_ID, o.SHARE, o.OUTGO_DATE, o.INSERT_TIME, o.TRADE_NAME, o.UPDATE_TIME, o.REMARK, 
-			a.RECORD_ID ATT_RECORD_ID, a.ABSOLUTE_PATH ABSOLUTE_PATH  	
+			a.RECORD_ID ATT_RECORD_ID, a.ABSOLUTE_PATH ATT_ABSOLUTE_PATH, a.ID ATT_ID
 		FROM <include refid="outgoTable"/> o
-			LEFT OUTER JOIN ATTACHMENT a ON o.ID = a.RECORD_ID AND LENGTH(a.RECORD_ID)>0 AND a.RECORD_ID IS NOT NULL 
+			LEFT OUTER JOIN ATTACHMENT a ON o.ID = a.RECORD_ID 
 		<where>
 			<if test="share != null and share != ''">
 				AND SHARE = #{share}

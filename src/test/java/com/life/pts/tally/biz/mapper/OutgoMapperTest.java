@@ -32,7 +32,7 @@ public class OutgoMapperTest extends Junit4TestSupport {
 		try {
 			List<Outgo> outgoList = this.outgoMapper.listOutgo(new HashMap<String, Object>());
 			for (Outgo outgo : outgoList) {
-				System.out.println(outgo);
+				System.out.println(outgo.getAttachmentList());
 			}
 		} catch (DAOException e) {
 			e.printStackTrace();
