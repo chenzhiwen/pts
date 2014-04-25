@@ -28,6 +28,44 @@
 <script src="<%=contextPath%>/js/bootstrap-tab.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script type="text/javascript">
+
+	/* 拼接FORM参数  */
+	function getFormParams(form) {
+		var params = "";
+		var formData = $(form).serializeArray();
+		$.each(formData, function() {
+			params = params + this.name + "=" + this.value + "&";
+		});
+		params = params.substr(0, params.length - 1);
+		return params;
+	}
+
+	function login() {
+		var params = getFormParams($("#loginForm"));
+		$.ajax({
+			url : "<%=contextPath%>/j_spring_security_check",
+			type : 'post',
+			data : params,
+			success : function(data) {
+				var result = eval("(" + data + ")");
+				if (result.data.authentication) {
+					window.location.href = '<%=contextPath%>/main.action';
+				} else {
+					if (result.data.verifycodeFailure) {
+						$('#verifycode').val("");
+						alert(result.data.msg);
+					} else if (result.data.usernamePasswordFailure) {
+						$('#password').val("");
+						$('#verifycode').val("");
+						alert(result.data.msg);
+					}
+				}
+			}
+		});
+	}
+</script>
+
 <style type="text/css">
 /* Override some defaults */
 html,body {
@@ -73,7 +111,7 @@ legend {
 						</ul>
 						<div id="myTabContent" class="tab-content">
 							<div class="tab-pane active in" id="login">
-								<form class="form-horizontal" action="<%=contextPath%>/j_spring_security_check" method="POST">
+								<form class="form-horizontal" method="POST" id="loginForm">
 									<fieldset>
 										<div id="legend">
 											<legend class="">登录</legend>
@@ -83,7 +121,7 @@ legend {
 											<label class="control-label" for="username">用户名</label>
 											<div class="controls">
 												<input type="text" id="username" name="j_username"
-													placeholder="" class="input-xlarge">
+													placeholder="" class="input-xlarge" required="true">
 											</div>
 										</div>
 
@@ -92,15 +130,14 @@ legend {
 											<label class="control-label" for="password">密码</label>
 											<div class="controls">
 												<input type="password" id="password" name="j_password"
-													placeholder="" class="input-xlarge">
+													placeholder="" class="input-xlarge" required="true">
 											</div>
 										</div>
-
 
 										<div class="control-group">
 											<!-- Button -->
 											<div class="controls">
-												<button class="btn btn-success">登录</button>
+												<input type="button" class="btn btn-success" onclick="login();" value="登录" />
 											</div>
 										</div>
 									</fieldset>

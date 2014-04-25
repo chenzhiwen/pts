@@ -53,8 +53,12 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="typeAliasesPackage" value="com.life.pts,com.life.framework.um.common.entity" />
-		<property name="mapperLocations" value="classpath:mybatis-mapping/*Mapper.xml,
-		classpath:com/life/framework/um/biz/mapper/*.Mapper.xml" />
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:mybatis-mapping/*Mapper.xml</value>
+				<value>classpath:com/life/framework/um/biz/mapper/*.Mapper.xml</value>
+			</list>
+		</property>
 <!-- 		<property name="plugins" ref="paginationInterceptor" /> -->
 	</bean>
 	<!-- mybatis接口 -->
