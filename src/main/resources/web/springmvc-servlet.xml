@@ -28,7 +28,7 @@
 
 	<!-- 登录拦截器 -->
 	<!-- <mvc:interceptors>
-		<bean class="com.life.application.ccfp.user.web.interceptor.LoginInterceptor"/>
+		<bean class="com.life.pts.common.web.interceptor.LoginInterceptor"/>
 	</mvc:interceptors> -->
 	
 	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -14,7 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>首页</title>
 </head>
-
+	
 <frameset rows="59,*" cols="*" frameborder="no" border="0" framespacing="0">
   <frame src="<%=contextPath%>/jsp/header.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame" />
   <frameset rows="*" cols="15%,85%*" framespacing="0" frameborder="no" border="0">

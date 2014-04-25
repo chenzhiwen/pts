@@ -29,6 +29,7 @@
 <script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-datepicker.js"></script>
+<script src="<%=contextPath%>/js/ajaxInterceptor.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-datepicker.zh-CN.js"></script>
 <script type="text/javascript">
 $(function() {

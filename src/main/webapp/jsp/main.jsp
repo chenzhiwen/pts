@@ -24,18 +24,7 @@
 	
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-transition.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-alert.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-modal.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-dropdown.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-scrollspy.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-tab.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-tooltip.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-popover.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-button.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-collapse.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-carousel.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
+<script src="<%=contextPath%>/js/bootstrap-2.3.min.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
 <script src="<%=contextPath%>/js/jquery.flexslider.js"></script>
 <script src="<%=contextPath%>/js/jquery.fancybox.js"></script>
