@@ -8,6 +8,8 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
+	<import resource="classpath:web/web-context.xml"/>
+
 	<!-- 启用aspectj注解 -->
 	<aop:aspectj-autoproxy />
 
@@ -50,7 +52,7 @@
 	<!-- MyBatis session 工厂 配置 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="typeAliasesPackage" value="com.life.pts,com.life.framework.um.biz.entity" />
+		<property name="typeAliasesPackage" value="com.life.pts,com.life.framework.um.common.entity" />
 		<property name="mapperLocations" value="classpath:mybatis-mapping/*Mapper.xml,
 		classpath:com/life/framework/um/biz/mapper/*.Mapper.xml" />
 <!-- 		<property name="plugins" ref="paginationInterceptor" /> -->
@@ -72,5 +74,5 @@
 		proxy-target-class="true" />
 
 	<!-- Spring Context 工具类 -->
-	<bean id="springContextHolder" class="com.life.framework.core.spring.SpringContextHolder" />
+	<bean id="applicationContextProvider" class="com.life.framework.core.context.ApplicationContextProvider" />
 </beans>

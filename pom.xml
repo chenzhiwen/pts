@@ -62,7 +62,11 @@
 			<artifactId>framework-um-biz</artifactId>
 			<version>${life.framework.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.life.framework</groupId>
+			<artifactId>framework-um-common</artifactId>
+			<version>${life.framework.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.life.framework</groupId>
 			<artifactId>framework-um-web</artifactId>
