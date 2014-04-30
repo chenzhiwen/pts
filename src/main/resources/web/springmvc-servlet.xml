@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
 	<!-- 自动搜索@Controller标注的类 用于指明系统从哪个路径下寻找controller，然后提前初始化这些对象。 -->
-	<context:component-scan base-package="com.life.pts.*.web.controller,com.life.framework.um.web.controller" />
+	<context:component-scan base-package="com.life.pts.*.web.controller,com.life.framework.um.web" />
 
 	<!-- 启动mvc注解 -->
 	<mvc:annotation-driven />
