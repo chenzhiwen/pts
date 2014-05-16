@@ -44,7 +44,7 @@ $(function() {
 						<li><a href="<%=contextPath%>/outgo_list.action" target="mainFrame"><i class="icon-bar-chart"></i> 统计</a></li>
 					</ul>
 					<ul class="nav pull-right">
-			        	<li><a href="mailto:dave@davegandy.com"><i class="icon-signout icon-white"></i> 退出</a></li>
+			        	<li><a href="<%=contextPath%>/j_spring_security_logout"><i class="icon-signout icon-white"></i> 退出</a></li>
 			        </ul>
 					<form class="navbar-search pull-right">
 						<input type="text" class="search-query" placeholder="搜索">
