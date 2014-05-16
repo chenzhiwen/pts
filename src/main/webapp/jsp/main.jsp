@@ -15,7 +15,7 @@
 <link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/datepicker.css" rel="stylesheet">
-<link href="<%=contextPath%>/css/font-awesome.css" rel="stylesheet">
+<link href="<%=contextPath%>/css/font-awesome.min.css" rel="stylesheet">
 <link href="<%=contextPath%>/js/google-code-prettify/prettify.css"
 	rel="stylesheet">
 <link href="<%=contextPath%>/css/flexslider.css" rel="stylesheet"

@@ -7,22 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="<%=contextPath%>/css/font-awesome.min.css" rel="stylesheet">
 <link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
 
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-transition.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-alert.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-modal.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-dropdown.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-scrollspy.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-tab.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-tooltip.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-popover.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-button.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-collapse.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-carousel.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
+<script src="<%=contextPath%>/js/bootstrap-2.3.min.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
 
 <script type="text/javascript">
@@ -49,10 +39,13 @@ $(function() {
 				</a> <a class="brand" href="#">记账</a>
 				<div class="nav-collapse">
 					<ul id="navigatorUl" class="nav">
-						<li class="active"><a href="<%=contextPath%>/zone.action" target="mainFrame">动态</a></li>
-						<li><a href="<%=contextPath%>/jsp/record/addRecord.jsp" target="mainFrame">记账</a></li>
-						<li><a href="<%=contextPath%>/outgo_list.action" target="mainFrame">统计</a></li>
+						<li class="active"><a href="<%=contextPath%>/zone.action" target="mainFrame"><i class="icon-share"></i> 动态</a></li>
+						<li><a href="<%=contextPath%>/jsp/record/addRecord.jsp" target="mainFrame"><i class="icon-edit"></i> 记账</a></li>
+						<li><a href="<%=contextPath%>/outgo_list.action" target="mainFrame"><i class="icon-bar-chart"></i> 统计</a></li>
 					</ul>
+					<ul class="nav pull-right">
+			        	<li><a href="mailto:dave@davegandy.com"><i class="icon-signout icon-white"></i> 退出</a></li>
+			        </ul>
 					<form class="navbar-search pull-right">
 						<input type="text" class="search-query" placeholder="搜索">
 					</form>

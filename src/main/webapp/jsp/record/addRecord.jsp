@@ -11,22 +11,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
+<link href="<%=contextPath%>/css/font-awesome.min.css" rel="stylesheet">
 <link href="<%=contextPath%>/css/datepicker.css" rel="stylesheet">
 <link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-transition.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-alert.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-modal.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-dropdown.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-scrollspy.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-tab.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-tooltip.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-popover.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-button.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-collapse.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-carousel.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-typeahead.js"></script>
+<script src="<%=contextPath%>/js/bootstrap-2.3.min.js"></script>
 <script src="<%=contextPath%>/js/application.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-datepicker.js"></script>
 <script src="<%=contextPath%>/js/ajaxInterceptor.js"></script>
