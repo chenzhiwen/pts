@@ -71,4 +71,5 @@ public interface Constants {
 	String BUDGET = "budget";
 	String INCOME_TOTAL = "incomeTotal";
 	String TRANSFER_SUM_TOTAL = "transferTotal";
+	String UIID = "uiid";
 }

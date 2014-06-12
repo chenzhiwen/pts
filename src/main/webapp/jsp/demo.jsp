@@ -21,6 +21,16 @@
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-2.3.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var options = {  
+            "placement" : "bottom", // 在链接下方显示tooltip  
+            "title" : '测试',        // tooltip中内容  
+            "html" : "true"   // 如果为true，title可以为html代码  
+        } ;  
+        $('#example').tooltip(options) ; 
+	});
+</script>
 </head>
 <body>
 
@@ -118,7 +128,7 @@
 		
 			</div> <!-- /span3 -->
 			
-			
+			<a id="example" >Tooltip on bottom</a>
 			
 			<div class="span9">
 				

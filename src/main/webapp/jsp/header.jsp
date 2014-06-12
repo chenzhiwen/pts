@@ -7,15 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <script type="text/javascript">
-/* $(function() {
-	
-	$('#navigatorUl li').click(function(e) { 
-		$('#navigatorUl li').each(function(index, obj) {
-			$(this).removeClass();
-		});
-    	$(this).addClass('active');
-   	});
-}); */
+
+$(function() {
+	console.info(window.location.href);
+    $('#signout').tooltip({placement : 'bottom', title : '退出'}) ; 
+    var uiid = '<c:out value="${uiid}" />';
+    $('#navigatorUl li').each(function(index, obj) {
+    	console.info(index);
+		$(this).removeClass();
+	});
+    console.info($("#" + uiid));
+	$("#" + uiid).addClass('active');
+});
 </script>
 </head>
 <body>
@@ -28,13 +31,13 @@
 				</a> <a class="brand" href="#">记账</a>
 				<div class="nav-collapse">
 					<ul id="navigatorUl" class="nav">
-						<li><a href="<c:url value="/main.action" />"><i class="icon-share"></i> 动态</a></li>
-						<li><a href="<c:url value='/record_forwardAdd.action' />"><i class="icon-edit"></i> 记账</a></li>
-						<li><a href="<c:url value="/outgo_list.action" />"><i class="icon-bar-chart"></i> 统计</a></li>
-						<li><a href="<c:url value="/demo.action" />"><i class="icon-bar-chart"></i> 例子</a></li>
+						<li id="zoneUI"><a href="<c:url value="/main.action?uiid=zoneUI" />"><i class="icon-share"></i> 动态</a></li>
+						<li id="recordUI"><a href="<c:url value='/record_forwardAdd.action?uiid=recordUI' />"><i class="icon-edit"></i> 记账</a></li>
+						<li id="sumUI"><a href="<c:url value="/outgo_list.action?uiid=sumUI" />"><i class="icon-bar-chart"></i> 统计</a></li>
+						<li id="demoUI"><a href="<c:url value="/demo.action?uiid=demoUI" />"><i class="icon-bar-chart"></i> 例子</a></li>
 					</ul>
 					<ul class="nav pull-right">
-			        	<li><a href="/j_spring_security_logout"><i class="icon-signout icon-white"></i> 退出</a></li>
+			        	<li><a id="signout" href='<c:url value="/j_spring_security_logout"/>'><i class="icon-signout icon-white"></i>&nbsp;</a></li>
 			        </ul>
 					<form class="navbar-search pull-right">
 						<input type="text" class="search-query" placeholder="搜索">

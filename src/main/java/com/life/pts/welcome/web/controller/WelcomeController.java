@@ -33,13 +33,14 @@ public class WelcomeController {
 	private OutgoService outgoService;
 	
 	@RequestMapping("main.action")
-	public ModelAndView main() {
+	public ModelAndView main(String uiid) {
 		Map<String, Object> queryModel = new HashMap<String, Object>();
 		try {
 			List<Outgo> outgoList = this.outgoService.listOutgo(queryModel);
 			
 			queryModel.clear();
 			queryModel.put(Constants.OUTGO_LIST, outgoList);
+			queryModel.put(Constants.UIID, uiid);
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
@@ -63,7 +64,9 @@ public class WelcomeController {
 	}
 	
 	@RequestMapping("/demo.action")
-	public String forwardAddRecord() {
-		return "demo";
+	public ModelAndView forwardAddRecord(String uiid) {
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put(Constants.UIID, uiid);
+		return new ModelAndView("demo", model);
 	}
 }

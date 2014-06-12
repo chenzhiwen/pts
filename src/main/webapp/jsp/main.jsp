@@ -69,9 +69,8 @@
 		}); --%>
 	});
 </script>
-<title>Insert title here</title>
 </head>
-<body>
+<body><c:out value="${uiid}" />
 	<div class="container">
 		<c:forEach var="outgo" items="${outgoList}">
 			<div class="panel panel-default">
