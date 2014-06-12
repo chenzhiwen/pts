@@ -17,8 +17,8 @@
 	
 <frameset rows="59,*" cols="*" frameborder="no" border="0" framespacing="0">
   <frame src="<%=contextPath%>/jsp/header.jsp" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame" />
-  <frameset rows="*" cols="15%,85%*" framespacing="0" frameborder="no" border="0">
-    <frame src="<%=contextPath%>/jsp/menu.jsp" name="leftFrame" scrolling="no" noresize="noresize" id="leftFrame" title="leftFrame" />
+  <frameset rows="*" cols="100%*" framespacing="0" frameborder="no" border="0">
+<%--     <frame src="<%=contextPath%>/jsp/menu.jsp" name="leftFrame" scrolling="no" noresize="noresize" id="leftFrame" title="leftFrame" /> --%>
     <frame src="<%=contextPath%>/jsp/main.jsp" name="mainFrame" id="mainFrame" title="mainFrame" />
   </frameset>
 </frameset>

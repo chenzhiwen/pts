@@ -66,7 +66,7 @@
 
 <div class="row" style="margin-top:20px">
     <div class="login-container">
-		<form role="form" id="loginForm">
+		<form role="form" id="loginForm" action="<%=contextPath%>/main.action" method="post">
 			<fieldset>
 				<h2>请登录</h2>
 				<hr class="colorgraph">

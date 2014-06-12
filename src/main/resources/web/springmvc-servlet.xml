@@ -17,32 +17,38 @@
 	<!-- 启动mvc注解 -->
 	<mvc:annotation-driven />
 
-	<!-- <bean id="mappingJacksonHttpMessageConverter"
-		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-		<property name="supportedMediaTypes">
+	<!-- 页面布局 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles2.TilesView
+			</value>
+		</property>
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
 			<list>
-				<value>text/html;charset=UTF-8</value>
+				<value>classpath:web/tiles.xml</value>
 			</list>
 		</property>
-	</bean> -->
+	</bean>
 
 	<!-- 登录拦截器 -->
 	<!-- <mvc:interceptors>
 		<bean class="com.life.pts.common.web.interceptor.LoginInterceptor"/>
 	</mvc:interceptors> -->
-	
-	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/jsp"/>
-        <property name="suffix" value=".jsp"/>
-    </bean> -->
     
-    <bean id="jspViewResolver"
+    <!-- <bean id="jspViewResolver"
 	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/jsp" />
 		<property name="suffix" value=".jsp" />
-  </bean>
+  </bean> -->
+  
+  
     
     <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->  
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
@@ -61,4 +67,16 @@
             </props>  
         </property>  
     </bean>  
+    
+    <!--Routes -->
+	<mvc:view-controller path="/" view-name="home"/>
+	<mvc:view-controller path="/getstarted" view-name="getstarted"/>
+	<mvc:view-controller path="/errors-validations" view-name="errors-validations"/>	  
+	<mvc:view-controller path="/misc" view-name="misc"/>	  
+	<mvc:view-controller path="/faq" view-name="faq"/>
+	
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources/ directory -->
+
 </beans>

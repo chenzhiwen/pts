@@ -1,22 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="common/common.jsp" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
-<link href="<%=contextPath%>/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="<%=contextPath%>/css/font-awesome.min.css" rel="stylesheet">
-<link href="<%=contextPath%>/js/google-code-prettify/prettify.css" rel="stylesheet">
-
-<script src="<%=contextPath%>/js/jquery.js"></script>
-<script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-2.3.min.js"></script>
-<script src="<%=contextPath%>/js/application.js"></script>
 
 <script type="text/javascript">
-$(function() {
+/* $(function() {
 	
 	$('#navigatorUl li').click(function(e) { 
 		$('#navigatorUl li').each(function(index, obj) {
@@ -24,10 +15,8 @@ $(function() {
 		});
     	$(this).addClass('active');
    	});
-
-})
+}); */
 </script>
-<title>Insert title here</title>
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -39,12 +28,13 @@ $(function() {
 				</a> <a class="brand" href="#">记账</a>
 				<div class="nav-collapse">
 					<ul id="navigatorUl" class="nav">
-						<li class="active"><a href="<%=contextPath%>/zone.action" target="mainFrame"><i class="icon-share"></i> 动态</a></li>
-						<li><a href="<%=contextPath%>/jsp/record/addRecord.jsp" target="mainFrame"><i class="icon-edit"></i> 记账</a></li>
-						<li><a href="<%=contextPath%>/outgo_list.action" target="mainFrame"><i class="icon-bar-chart"></i> 统计</a></li>
+						<li><a href="<c:url value="/main.action" />"><i class="icon-share"></i> 动态</a></li>
+						<li><a href="<c:url value='/record_forwardAdd.action' />"><i class="icon-edit"></i> 记账</a></li>
+						<li><a href="<c:url value="/outgo_list.action" />"><i class="icon-bar-chart"></i> 统计</a></li>
+						<li><a href="<c:url value="/demo.action" />"><i class="icon-bar-chart"></i> 例子</a></li>
 					</ul>
 					<ul class="nav pull-right">
-			        	<li><a href="<%=contextPath%>/j_spring_security_logout"><i class="icon-signout icon-white"></i> 退出</a></li>
+			        	<li><a href="/j_spring_security_logout"><i class="icon-signout icon-white"></i> 退出</a></li>
 			        </ul>
 					<form class="navbar-search pull-right">
 						<input type="text" class="search-query" placeholder="搜索">

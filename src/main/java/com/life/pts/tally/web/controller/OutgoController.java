@@ -90,7 +90,7 @@ public class OutgoController {
 			e.printStackTrace();
 		}
 		model.put("success", true);
-		return new ModelAndView("/record/addRecord", model);
+		return new ModelAndView("addRecord", model);
 	}
 	
 	@RequestMapping("outgo_list.action")
@@ -102,7 +102,7 @@ public class OutgoController {
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
-		return new ModelAndView("/record/listRecord", model);
+		return new ModelAndView("listRecord", model);
 	}
 
 	@RequestMapping("outgo_listJson.action")

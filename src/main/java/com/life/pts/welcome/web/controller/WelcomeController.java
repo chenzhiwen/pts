@@ -43,8 +43,9 @@ public class WelcomeController {
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
-		return new ModelAndView("/home", queryModel);
+		return new ModelAndView("main", queryModel);
 	}
+	
 
 	@RequestMapping("zone.action")
 	public ModelAndView zone() {
@@ -59,5 +60,10 @@ public class WelcomeController {
 			e.printStackTrace();
 		}
 		return new ModelAndView("/main", queryModel);
+	}
+	
+	@RequestMapping("/demo.action")
+	public String forwardAddRecord() {
+		return "demo";
 	}
 }

@@ -7,6 +7,7 @@
 	<packaging>war</packaging>
 	<name>Person-Tally-System</name>
 
+
 	<properties>
 		<junit.test.version>4.9</junit.test.version>
 		<life.framework.version>0.0.1-SNAPSHOT</life.framework.version>
@@ -23,9 +24,21 @@
 		<axis2.version>1.5.4</axis2.version>
 		<druid-version>0.2.9</druid-version>
 		<ors.aspectj.version>1.6.8</ors.aspectj.version>
+		<apache.tiles.version>2.2.2</apache.tiles.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${apache.tiles.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${apache.tiles.version}</version>
+		</dependency>
 		<!-- if you need jstl 1.1 feature, this dependency is required. -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -96,6 +109,7 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -113,6 +127,7 @@
 			<artifactId>spring-security-core</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
@@ -143,7 +158,6 @@
 			<version>${javax.servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<!-- jdbc -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -219,6 +233,7 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
@@ -229,6 +244,7 @@
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-access</artifactId>

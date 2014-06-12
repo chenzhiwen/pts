@@ -12,22 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="<%=contextPath%>/css/bootstrap.css" rel="stylesheet">
-<link href="<%=contextPath%>/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="<%=contextPath%>/css/datepicker.css" rel="stylesheet">
-<link href="<%=contextPath%>/css/font-awesome.min.css" rel="stylesheet">
-<link href="<%=contextPath%>/js/google-code-prettify/prettify.css"
-	rel="stylesheet">
-<link href="<%=contextPath%>/css/flexslider.css" rel="stylesheet"
-	type="text/css" media="screen" />
-<link href="<%=contextPath%>/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="screen" />
-	
-<script src="<%=contextPath%>/js/jquery.js"></script>
-<script src="<%=contextPath%>/js/google-code-prettify/prettify.js"></script>
-<script src="<%=contextPath%>/js/bootstrap-2.3.min.js"></script>
-<script src="<%=contextPath%>/js/application.js"></script>
-<script src="<%=contextPath%>/js/jquery.flexslider.js"></script>
-<script src="<%=contextPath%>/js/jquery.fancybox.js"></script>
+
 <script type="text/javascript">
 	$(function() {
 		$(window).load(function() {
@@ -87,48 +72,38 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%-- <div class="panel panel-default" style="width: 90%">
-	<div class="panel-body">
-		<div class="panel-group" id="zoneGroupDiv">
+	<div class="container">
 		<c:forEach var="outgo" items="${outgoList}">
 			<div class="panel panel-default">
-			    <div class="panel-heading">
-			        ${outgo.tradeName}  
-			        <fmt:formatDate value="${outgo.insertTime}" type="time"/>
-			    </div>
-			    <div class="panel-body">
-			        ${outgo.remark}
-			    </div>
-			    <!-- /.panel-body -->
+				<div class="panel-heading">
+					${outgo.tradeName}
+					<fmt:formatDate value="${outgo.insertTime}" type="time" />
+				</div>
+				<div class="panel-body">
+					<div class="panel-body">
+						<p>
+							<c:forEach var="attachment" items="${outgo.attachmentList}">
+								<c:if test="${!empty attachment.absolutePath}">
+									<a class="fancybox"
+										href="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}"
+										data-fancybox-group="gallery"><img width="180"
+										height="180"
+										src="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}"
+										alt="" /></a>
+								</c:if>
+							</c:forEach>
+						</p>
+						${outgo.remark}
+					</div>
+					<%-- <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" > --%>
+					<!-- <input style="width: 97%" type="text" placeholder="我也说一句"> -->
+				</div>
+				<!-- /.panel-body -->
 			</div>
 		</c:forEach>
-		</div>
 	</div>
-</div> --%>
-
-<c:forEach var="outgo" items="${outgoList}">
-	<div class="panel panel-default span6">
-	    <div class="panel-heading">
-	        ${outgo.tradeName}  
-	        <fmt:formatDate value="${outgo.insertTime}" type="time"/>
-	    </div>
-	    <div class="panel-body">
-       		<div class="panel-body">
-						<p>
-			        <c:forEach var="attachment" items="${outgo.attachmentList}">
-			        	<c:if test="${!empty attachment.absolutePath}">
-							<a class="fancybox" href="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}" data-fancybox-group="gallery"><img width="180" height="180" src="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}" alt="" /></a>							
-			        	</c:if>
-			        </c:forEach>
-						</p>
-		        ${outgo.remark}
-		    </div>
-	        <%-- <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" > --%>
-	        <input class="span5" style="width: 97%" type="text" placeholder="我也说一句">
-	    </div>
-	    <!-- /.panel-body -->
-	</div>
-</c:forEach>
-
+	<!-- /span9 -->
+	<!-- /row -->
+	<!-- /container -->
 </body>
 </html>
