@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,7 +10,8 @@
 <link href="<c:url value="/css/bootstrap-responsive.css" />"
 	rel="stylesheet">
 <link href="<c:url value="/css/datepicker.css" />" rel="stylesheet">
-<link href="<c:url value="/css/font-awesome.min.css" />" rel="stylesheet">
+<link href="<c:url value="/css/font-awesome.min.css" />"
+	rel="stylesheet">
 <link href="<c:url value="/js/google-code-prettify/prettify.css" />"
 	rel="stylesheet">
 <link href="<c:url value="/css/flexslider.css" />" rel="stylesheet"
@@ -26,12 +27,25 @@
 <script src="<c:url value="/js/jquery.fancybox.js" />"></script>
 <script src="<c:url value="/js/bootstrap-datepicker.js" />"></script>
 <script src="<c:url value="/js/bootstrap-datepicker.zh-CN.js" />"></script>
+<script src="<c:url value="/js/bootstrap-paginator.js" />"></script>
 
 <title><tiles:getAsString name="title" /></title>
 </head>
 <body>
-	<tiles:insertAttribute name="header" /><br/><br/><br/>
-	<tiles:insertAttribute name="body" />
+	<tiles:insertAttribute name="header" />
+	<br />
+	<br />
+	<br />
+	<div class="container">
+		<div class="row">
+			<div class="span3">
+				<tiles:insertAttribute name="menu" />
+			</div>
+			<div class="span9">
+				<tiles:insertAttribute name="body" />
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

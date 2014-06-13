@@ -2,6 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<script type="text/javascript">
+	$(function(){
+		 var options = {
+			currentPage: 3,
+            totalPages: 10,
+            size:'small',
+            alignment:'right'
+        };
+
+        $('#bp-get-started-initialization').bootstrapPaginator(options);
+	});
+</script>
 <body>
 
 	<div class="container">
@@ -25,6 +37,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<div id="bp-get-started-initialization"></div>
 	</div>
 </body>
 </html>

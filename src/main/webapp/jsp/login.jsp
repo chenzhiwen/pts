@@ -17,7 +17,7 @@
 
 <script src="<%=contextPath%>/js/jquery.js"></script>
 <script src="<%=contextPath%>/js/bootstrap-2.3.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script type="text/javascript">
 

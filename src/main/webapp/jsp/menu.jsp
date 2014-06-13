@@ -24,86 +24,63 @@
 </head>
 <body>
 
-	<div id="content">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="span3">
-
-					<div class="account-container">
+	<div class="account-container">
 
 
-						<div class="account-details">
+		<div class="account-details">
 
-							<span class="account-name">罗宾逊</span> <span class="account-role">管理员</span>
+			<span class="account-name">罗宾逊</span> <span class="account-role">管理员</span>
 
-							<span class="account-actions"> <a href="javascript:;">资料</a>
-								| <a href="javascript:;">编辑设置</a>
-							</span>
-
-						</div>
-						<!-- /account-details -->
-
-					</div>
-					<!-- /account-container -->
-
-					<hr>
-
-					<ul id="main-nav" class="nav nav-tabs nav-stacked">
-
-						<li><a href="./"> <i class="icon-home"></i> 首页
-						</a></li>
-
-						<li><a href="./faq.html"> <i class="icon-pushpin"></i>
-								帮助页面
-						</a></li>
-
-						<li><a href="./plans.html"> <i class="icon-th-list"></i>
-								价目表单
-						</a></li>
-
-						<li class="active"><a href="./grid.html"> <i
-								class="icon-th-large"></i> 网格布局 <span
-								class="label label-warning pull-right">5</span>
-						</a></li>
-
-						<li><a href="./charts.html"> <i class="icon-signal"></i>
-								图表统计
-						</a></li>
-
-						<li><a href="./account.html"> <i class="icon-user"></i>
-								用户账号
-						</a></li>
-
-						<li><a href="./login.html"> <i class="icon-lock"></i>
-								登录页面
-						</a></li>
-
-					</ul>
-
-
-
-					<hr>
-
-					<div class="sidebar-extra">
-						<p>这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字.</p>
-					</div>
-					<!-- .sidebar-extra -->
-
-					<br>
-
-				</div>
-				<!-- /span3 -->
-
-			</div>
-			<!-- /row -->
+			<span class="account-actions"> <a href="javascript:;">资料</a> |
+				<a href="javascript:;">编辑设置</a>
+			</span>
 
 		</div>
-		<!-- /container -->
+		<!-- /account-details -->
 
 	</div>
+	<!-- /account-container -->
+
+	<hr>
+
+	<ul id="main-nav" class="nav nav-tabs nav-stacked">
+
+		<li><a href="./"> <i class="icon-home"></i> 首页
+		</a></li>
+
+		<li><a href="./faq.html"> <i class="icon-pushpin"></i> 帮助页面
+		</a></li>
+
+		<li><a href="./plans.html"> <i class="icon-th-list"></i> 价目表单
+		</a></li>
+
+		<li class="active"><a href="./grid.html"> <i
+				class="icon-th-large"></i> 网格布局 <span
+				class="label label-warning pull-right">5</span>
+		</a></li>
+
+		<li><a href="./charts.html"> <i class="icon-signal"></i> 图表统计
+		</a></li>
+
+		<li><a href="./account.html"> <i class="icon-user"></i> 用户账号
+		</a></li>
+
+		<li><a href="./login.html"> <i class="icon-lock"></i> 登录页面
+		</a></li>
+
+	</ul>
+
+
+
+	<hr>
+
+	<div class="sidebar-extra">
+		<p>这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字这里是提示信息文字.</p>
+	</div>
+	<!-- .sidebar-extra -->
+
+	<br>
+
 
 </body>
 </html>

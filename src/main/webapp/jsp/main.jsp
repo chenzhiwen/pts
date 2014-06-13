@@ -70,37 +70,35 @@
 	});
 </script>
 </head>
-<body><c:out value="${uiid}" />
-	<div class="container">
-		<c:forEach var="outgo" items="${outgoList}">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					${outgo.tradeName}
-					<fmt:formatDate value="${outgo.insertTime}" type="time" />
-				</div>
-				<div class="panel-body">
-					<div class="panel-body">
-						<p>
-							<c:forEach var="attachment" items="${outgo.attachmentList}">
-								<c:if test="${!empty attachment.absolutePath}">
-									<a class="fancybox"
-										href="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}"
-										data-fancybox-group="gallery"><img width="180"
-										height="180"
-										src="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}"
-										alt="" /></a>
-								</c:if>
-							</c:forEach>
-						</p>
-						${outgo.remark}
+<body>
+
+				<c:forEach var="outgo" items="${outgoList}">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							${outgo.tradeName}
+							<fmt:formatDate value="${outgo.insertTime}" type="time" />
+						</div>
+						<div class="panel-body">
+							<div class="panel-body">
+								<p>
+									<c:forEach var="attachment" items="${outgo.attachmentList}">
+										<c:if test="${!empty attachment.absolutePath}">
+											<a class="fancybox"
+												href="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}"
+												data-fancybox-group="gallery"><img width="180"
+												height="180"
+												src="<%=contextPath%>/outgo_outputImage.action?absolutePath=${attachment.absolutePath}"
+												alt="" /></a>
+										</c:if>
+									</c:forEach>
+								</p>
+								${outgo.remark}
+							</div>
+							<!-- 					<input style="width: 97%" type="text" placeholder="我也说一句"> -->
+						</div>
+						<!-- /.panel-body -->
 					</div>
-					<%-- <img alt="" src="<%=contextPath%>/outgo_outputImage.action?recordId=${outgo.id}" > --%>
-					<!-- <input style="width: 97%" type="text" placeholder="我也说一句"> -->
-				</div>
-				<!-- /.panel-body -->
-			</div>
-		</c:forEach>
-	</div>
+				</c:forEach>
 	<!-- /span9 -->
 	<!-- /row -->
 	<!-- /container -->

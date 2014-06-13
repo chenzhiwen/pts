@@ -31,22 +31,20 @@ public class WelcomeController {
 
 	@Resource
 	private OutgoService outgoService;
-	
+
 	@RequestMapping("main.action")
-	public ModelAndView main(String uiid) {
+	public ModelAndView main() {
 		Map<String, Object> queryModel = new HashMap<String, Object>();
 		try {
 			List<Outgo> outgoList = this.outgoService.listOutgo(queryModel);
-			
+
 			queryModel.clear();
 			queryModel.put(Constants.OUTGO_LIST, outgoList);
-			queryModel.put(Constants.UIID, uiid);
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
 		return new ModelAndView("main", queryModel);
 	}
-	
 
 	@RequestMapping("zone.action")
 	public ModelAndView zone() {
@@ -54,7 +52,7 @@ public class WelcomeController {
 		try {
 			queryModel.put("share", 1);
 			List<Outgo> outgoList = this.outgoService.listOutgo(queryModel);
-			
+
 			queryModel.clear();
 			queryModel.put(Constants.OUTGO_LIST, outgoList);
 		} catch (ServiceException e) {
@@ -62,11 +60,9 @@ public class WelcomeController {
 		}
 		return new ModelAndView("/main", queryModel);
 	}
-	
+
 	@RequestMapping("/demo.action")
-	public ModelAndView forwardAddRecord(String uiid) {
-		Map<String, Object> model = new HashMap<String, Object>();
-		model.put(Constants.UIID, uiid);
-		return new ModelAndView("demo", model);
+	public String forwardAddRecord() {
+		return "demo";
 	}
 }

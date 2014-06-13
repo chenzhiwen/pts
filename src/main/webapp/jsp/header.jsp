@@ -9,15 +9,12 @@
 <script type="text/javascript">
 
 $(function() {
-	console.info(window.location.href);
+	var liid = window.location.href.split("?uiid=")[1];
     $('#signout').tooltip({placement : 'bottom', title : '退出'}) ; 
-    var uiid = '<c:out value="${uiid}" />';
     $('#navigatorUl li').each(function(index, obj) {
-    	console.info(index);
 		$(this).removeClass();
 	});
-    console.info($("#" + uiid));
-	$("#" + uiid).addClass('active');
+	$("#" + liid).addClass('active');
 });
 </script>
 </head>

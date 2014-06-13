@@ -4,15 +4,24 @@
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-	<definition name="base.definition" template="/jsp/layout.jsp">
+	
+	<definition name="base.definition" template="/jsp/home-layout.jsp">
 		<put-attribute name="title" value="主页" />
 		<put-attribute name="header" value="/jsp/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/jsp/footer.jsp" />
 	</definition>
 	
-	<definition name="main" extends="base.definition">
-		<put-attribute name="title" value="Main" />
+	<definition name="home.definition" template="/jsp/layout.jsp">
+		<put-attribute name="title" value="主页" />
+		<put-attribute name="header" value="/jsp/header.jsp" />
+		<put-attribute name="menu" value="/jsp/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="main" extends="home.definition">
+		<put-attribute name="title" value="动态" />
 		<put-attribute name="body" value="/jsp/main.jsp" />
 	</definition>
 
@@ -30,6 +39,5 @@
 		<put-attribute name="title" value="统计" />
 		<put-attribute name="body" value="/jsp/record/listRecord.jsp" />
 	</definition>
-	
 	
 </tiles-definitions>

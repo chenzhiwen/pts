@@ -68,7 +68,6 @@
 									enctype="multipart/form-data">
 									<div class="container">
 										<fieldset>
-											<legend>支出</legend>
 											<div class="alert alert-success">
 												<a class="close" data-dismiss="alert" href="#">×</a> <strong>提示信息！</strong>
 												支出信息添加成功
